@@ -1,0 +1,69 @@
+{
+    "name": "elsayed85/enlightnpro",
+    "description": "Enlightn Pro - Security and Performance Analysis Tool for Laravel Apps.",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "package",
+        "static analysis",
+        "dynamic analysis",
+        "static analyzer",
+        "dynamic analyzer",
+        "security",
+        "performance",
+        "audit",
+        "analysis tool"
+    ],
+    "license": "Commercial",
+    "authors": [
+        {
+            "name": "Paras Malhotra",
+            "email": "paras@laravel-enlightn.com"
+        },
+        {
+            "name": "Miguel Piedrafita",
+            "email": "soy@miguelpiedrafita.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2|^8.0",
+        "enlightn/enlightn": "^1.16",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.8",
+        "brianium/paratest": "^6.1",
+        "mockery/mockery": "^1.3",
+        "orchestra/testbench": "^4.0|^5.0|^6.0",
+        "phpunit/phpunit": "^7.5|^8.0|^9.0",
+        "predis/predis": "*"
+    },
+    "suggest": {
+        "laravel/telescope": "Required to use the Telescope analyzers."
+    },
+    "autoload": {
+        "psr-4": {
+            "Enlightn\\EnlightnPro\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Enlightn\\EnlightnPro\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/paratest --testsuite=\"Enlightn Pro Parallel Test Suite\" && vendor/bin/phpunit --testsuite=\"Enlightn Pro Serial Test Suite\""
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Enlightn\\EnlightnPro\\EnlightnProServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
